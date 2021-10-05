@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czech-project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="./main.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    
+    
+</head>
+<body>
+    
+    <app-carousel></app-carousel>
+    <app-calendar-select></app-calendar-select>
+
+    <section class="main-content"></section>
+    <footer class="footer"></footer>
+    <button id="open-modal">Open modal</button>
+
+    <template id="modal-template">
+        <section class="modal-container">
+            <div class="modal-body">
+                <div class="modal-header">
+                    <span>Day Detail</span>
+                    <i id="close-modal" class="fas fa-times"></i>
+                </div>
+                <div class="separator"></div>
+                <div class="modal-contents">
+                    <form id="modal-form">
+                        <div class="row">
+                            <label for="isHoliday">Holiday</label>
+                            <input id="isHoliday" name="isHolidayControl" type="checkbox">
+                        </div>
+                        <div class="row">
+                            <label>Title</label>
+                            <input id="eventTitle" name="eventTitle" type="text">
+                        </div>
+                        <div class="row">
+                            <label>Description</label>
+                            <textarea id="eventDescription" name="eventDescription"></textarea>
+                        </div>
+                        <div class="row">
+                            <label>Limit Attendees by Gender</label>
+                            <input type="checkbox" name="limitAttendeesByGender" id="limitAttendeesByGender">
+                        </div>
+                        <div id="genderSelectRow" class="row hidden">
+                            <label>Male</label>
+                            <input type="radio" name="gender" value="Male"
+                            id="radio-male">
+                            <label>Female</label>
+                            <input type="radio" name="gender" value="Female"
+                            id="radio-female">
+                        </div>
+                        <div class="row">
+                            <label>Attendees</label>
+                            <select name="eventAttendees" id="eventAttendees">
+                                <option value=' '> </option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-actions">
+                    <button id="save-button">Save</button>
+                    <button id="cancel-button">Cancel</button>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="toasterTemplate">
+        <div class="toaster">
+            <h1></h1>
+            <p></p>
+        </div>
+    </template>
+    <template id="loaderTemplate">
+        <div class="loader">
+            Loading...
+            <div class="anim-loader">
+                <svg width="40" height="40">
+                    <circle cy="10" cx="20" fill="white" r="6"></circle>
+                    <circle cy="25" cx="10" fill="white" r="6"></circle>
+                    <circle cy="25" cx="30" fill="white" r="6"></circle>
+                </svg>
+            </div>
+        </div>
+    </template>
+
+    <div class="digital-clock classHidden"></div>
+        <!-- <form id="calendarSelect">
+        <select name="monthSelect" id="monthSelect"></select>
+        <select name="yearSelect" id="yearSelect"></select>
+        </form> -->
+</body>
+</html>

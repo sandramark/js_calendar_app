@@ -1,0 +1,53 @@
+.header-news {
+    height: 18rem;
+
+    &__container {
+        
+        height: 18rem;
+        display: flex;
+        background-color: rgb(165, 195, 219);
+        position: relative;
+
+    }
+
+    & > button {
+        position: absolute;
+        top: 0;
+        height: 18rem;
+
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: rgba($black, 0.6);
+        cursor: pointer;
+        user-select: none;
+        transition: 0.5s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background-color: rgba($white, 0.6);
+            color: $black;
+
+
+        }
+
+        &.last {
+            right: 0;
+        }
+
+        .fas {
+
+            font-size: 2rem;
+        }
+
+
+
+        
+    }
+
+
+}
+

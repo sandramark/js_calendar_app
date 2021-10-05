@@ -1,0 +1,15 @@
+.header-news {
+
+    &__container {
+        
+            .news-article {
+                flex: 1 1 50%;
+                background-size: cover;
+                // height: 18rem;    
+                }
+
+                span {
+                    color: white;
+                }
+    }
+}
